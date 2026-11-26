@@ -1,4 +1,4 @@
-# rag-based-chat-system
+# Nasa RAG Evals
 
 ## NASA Mission Intelligence
 
@@ -128,7 +128,7 @@ A few architectural decisions were made deliberately:
 ## Project Structure
 
 ```
-Project-NASA-Mission-Intelligence/
+nasa-rag-evals/
 ├── chat.py                    # Streamlit chat application
 ├── embedding_pipeline.py      # Chunking, embedding, and ChromaDB ingestion
 ├── llm_client.py               # System prompt construction and answer generation
@@ -283,7 +283,7 @@ Per-question results across all six required categories (overview, emergency, di
 
 Two results are worth calling out specifically. **Q2** scored a Response Relevancy of exactly 0.0: retrieval surfaced a passage about a water warning light rather than the oxygen tank explosion, so the generated answer, while fluent, addressed the wrong incident, a clean example of a retrieval miss rather than a generation failure. **Q3** scored the lowest Faithfulness (0.13) despite being the most factually accurate answer in the set: the model correctly described the O-ring failure from general knowledge, but the retrieved Challenger mission audio transcripts do not contain root cause analysis, so that correct answer could not be grounded in what was actually retrieved.
 
-Full methodology, mission-level breakdowns, and additional charts are documented in `NASA_Mission_Intelligence_Report.docx`.
+Full methodology, mission-level breakdowns, and additional charts are documented in [Report](NASA_Mission_Intelligence_Report.pdf).
 
 ## Testing
 
@@ -330,4 +330,4 @@ Full troubleshooting detail is in [`RUN_INSTRUCTIONS.md`](./RUN_INSTRUCTIONS.md)
 
 ---
 
-*This project was built as an academic exercise in retrieval augmented generation and automated RAG evaluation. See `NASA_Mission_Intelligence_Report.pdf` for the full project report, including detailed module descriptions, mission-level results, and a value and limitations analysis.*
+*This project was built as an academic exercise in retrieval augmented generation and automated RAG evaluation. See [Report](NASA_Mission_Intelligence_Report.pdf) for the full project report, including detailed module descriptions, mission-level results, and a value and limitations analysis.*
